@@ -1,5 +1,5 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { IonToolbar } from '@ionic/angular';
+import { IonToolbar, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,9 @@ import { IonToolbar } from '@ionic/angular';
 export class AppComponent {
   title = 'netflix';
 
-  constructor(private _render: Renderer2) {}
+  constructor(private _render: Renderer2, private toastCtrl: ToastController) {
+    this.displayToastInstall
+  }
 
   @ViewChild(IonToolbar, {static: true, read: ElementRef}) public toolbar: ElementRef<IonToolbar> | undefined
 
@@ -23,6 +25,24 @@ export class AppComponent {
         color
       )
   }
-  
+
+  async displayToastInstall(platform = null) {
+    // Detects if device is on iOS 
+    const isIos = () => {
+      const userAgent = platform || window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test( userAgent );
+    }
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in (window as any).navigator) && ((window as any).navigator.standalone);
+    // Checks if should display install popup notification:
+    console.log(isIos(), isInStandaloneMode());
+    
+    if (isIos() && !isInStandaloneMode()) {
+      const toast =  await this.toastCtrl.create({
+        message: "Vous pouvez installer cette application via l'icône du navigateur"
+      });
+     await toast.present()
+    }
+  }
 }
 

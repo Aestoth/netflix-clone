@@ -7,12 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { HomeComponent } from './features/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment'
+import { environment } from '../environments/environment';
+import { ToastComponent } from './features/toastpwa/toastpwa.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
