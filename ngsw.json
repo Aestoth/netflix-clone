@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1632393839414,
+  "timestamp": 1632394845147,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -97,7 +97,21 @@
       "patterns": []
     }
   ],
-  "dataGroups": [],
+  "dataGroups": [
+    {
+      "name": "tmdbAPI",
+      "patterns": [
+        "thhps:\\/\\/api\\.themoviedb\\.org\\/3\\/(?:.+\\/)?[^/]*"
+      ],
+      "strategy": "performance",
+      "maxSize": 30,
+      "maxAge": 180000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
   "hashTable": {
     "./1296.dcd27681ca52a545ddea.js": "9b9211248cadf3e4d6aa02cb72b74f9e99fccffb",
     "./1374.eecf3d9be071083fa62d.js": "cb78a52d46e1361431ef6d0ce317db028ec6b270",
