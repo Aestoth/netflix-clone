@@ -1,0 +1,18 @@
+:host {
+  .logo-header {
+    height: 30px;
+    margin-top: 5px;
+  }
+
+  ion-toolbar {
+    --background: transparent;
+    --border-color: transparent;
+    --border-width: 0;
+    --border-style: none;
+  }
+
+  ion-content {
+    --background: var(--ion-color-secondary)
+  }
+
+}

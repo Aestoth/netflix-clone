@@ -1,0 +1,24 @@
+/* Ionic Variables and Theming. */
+/* This is just a placeholder file For more info, please see: */
+/* https://ionicframework.com/docs/theming/basics */
+
+/* To quickly generate your own theme, check out the color generator */
+/* https://ionicframework.com/docs/theming/color-generator */
+
+// Nouvelle couleur Netflix Red
+
+:root {
+    --ion-color-primary: #e50915;
+    --ion-color-primary-rgb: 229,9,21;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #ca0812;
+    --ion-color-primary-tint: #e8222c;
+  
+    --ion-color-secondary: #020000;
+    --ion-color-secondary-rgb: 2,0,0;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255,255,255;
+    --ion-color-secondary-shade: #020000;
+    --ion-color-secondary-tint: #1b1a1a;
+}

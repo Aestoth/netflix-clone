@@ -1,0 +1,71 @@
+<ion-grid [style.transform]="'translateY(-58px)'" class="ion-no-padding">
+  <ion-row class="highlight ion-align-items-center"[style.backgroundImage]="'url(' + data.trending[0].backdrop_path + ')'">
+    <div class="gradiant"></div>
+    <ion-col size="4" class="ion-padding">
+      <ion-text color="light" >
+        <h1>{{data.trending[0].title}}</h1>
+        <p>{{data.trending[0].overview}}</p>
+      </ion-text>
+      <ion-button color="primary">
+        <ion-icon name="play-outline"></ion-icon>Preview
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid *ngIf="data" class="ion-no-padding" class="ion-no-padding">
+  <ion-row>
+    <ion-col>
+      <ion-text color="light">
+        <h2>Trending now</h2>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let movie of data.trending.slice(1)">
+          <ion-img [src]="movie.poster_path"></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid *ngIf="data" class="ion-no-padding">
+  <ion-row>
+    <ion-col>
+      <ion-text color="light">
+        <h2>Discover</h2>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let discovery of data.discover">
+          <ion-img [src]="discovery.poster_path"></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid *ngIf="data" class="ion-no-padding">
+  <ion-row *ngFor="let genre of data.genres">
+    <ion-row>
+      <ion-col>
+        <ion-text color="light">
+          <h2>{{ genre.name }}</h2>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-col size="12">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let result of genre.results">
+          <ion-img [src]="result.poster_path"></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+</ion-grid>
