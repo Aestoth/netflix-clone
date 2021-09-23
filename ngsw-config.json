@@ -26,5 +26,16 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "tmdbAPI",
+      "urls": ["thhps://api.themoviedb.org/3/**/*"],
+      "version": 1,
+      "cacheConfig": {
+        "maxSize": 30,
+        "maxAge": "3m"
+      }
+    }
   ]
 }
